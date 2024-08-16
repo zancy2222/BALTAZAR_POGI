@@ -1,0 +1,96 @@
+<h2>Data</h2>
+
+<button class="add-btn" onclick="showAddForm()">Add</button>
+
+<!-- Pop-up Form -->
+<div id="popupForm" class="popup-form">
+<span class="close-btn" onclick="closePopupForm()">X</span>
+<h3>Add New Entry</h3>
+<form action="Logs.php" method="post">
+    <label for="info">Information:</label>
+    <input type="text" id="info" name="info" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="place">Place:</label>
+    <input type="text" id="place" name="place" required>
+
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>First name</th>
+            <th>Information</th>
+            <th>Age</th>
+            <th>Place</th>
+            <th>Buttons</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sample data, replace with your actual data -->
+        <tr>
+            <td>John Doe</td>
+            <td>WOWSIR</td>
+            <td>25</td>
+            <td>New York</td>
+            <td class="actions">
+                <button class="delete">Delete</button>
+                <button class="update">Update</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Jane Smith</td>
+            <td>WOWSIR</td>
+            <td>30</td>
+            <td>Los Angeles</td>
+            <td class="actions">
+                <button class="delete">Delete</button>
+                <button class="update">Update</button>
+            </td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+<script>
+    function showAddForm() {
+        document.getElementById('popupForm').style.display = 'block';
+    }
+
+    function closePopupForm() {
+        document.getElementById('popupForm').style.display = 'none';
+    }
+</script>
+
+<!-- CREATE DATABASE db_login;
+USE db_login;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Logs (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    action VARCHAR(255) NOT NULL,
+    date DATE,
+    time TIME
+);
+
+CREATE TABLE Datas (
+    Datas_id INT,
+    FOREIGN KEY (Datas_id) REFERENCES Logs(id),
+    Information VARCHAR(255) NOT NULL,
+    Age INT,
+    Place VARCHAR(255)
+); -->
